@@ -1,11 +1,14 @@
 
 import './App.css';
 import Menu from './component/Menu/Tinhmenu';
-import DrinkForm from './component/DrinkForm/DrinkForm';
+import Showmenu from './component/Menu/Showmenu';
+import Score from './component/Score/Score';
 function App() {
   return (
     <div className="App">
-      <Menu/>
+      {/* <Showmenu/>
+      <Menu/> */}
+      <Score/>
       
     </div>
   );
