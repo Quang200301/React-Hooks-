@@ -1,123 +1,107 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 
-class Score extends Component{
-constructor(props) {
-    super(props);
-    this.state = {
-        hk1: 0,
-        hk2: 0,
-        avg: 0,
-        result: "",
-        xl: ""
-    };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+const Score = () => {
+  const [hk1, setHk1] = useState(0);
+  const [hk2, setHk2] = useState(0);
+  const [avg, setAvg] = useState(0);
+  const [result, setResult] = useState("");
+  const [xl, setXL] = useState("");
 
-}
-handleChange = async (event) => {
+  const handleChange = (event) => {
     event.preventDefault();
     let key = event.target.name;
     let val = event.target.value;
-    this.setState({ [key]: val });
-    this.setState((state) => ({
-        avg: parseFloat((parseFloat(state.hk1) + parseFloat(state.hk2)) / 2),
-    }));
-    // this.setResult();
-    // this.setXL();
+    if (key === "hk1") {
+      setHk1(val);
+    } else if (key === "hk2") {
+      setHk2(val);
+    }
+    setAvg(parseFloat((parseFloat(hk1) + parseFloat(hk2)) / 2));
+  };
 
-};
-
-handleSubmit = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-    alert("Ban la hoc sinh : " + this.state.xl);
+    alert("Ban la hoc sinh : " + xl);
+  };
 
-};
-setResult = () => {
-    if (this.state.avg > 4, 5) this.setState({ result: "Được lên lớp" });
-    else this.setState({ result: "Ở lại lp" });
-};
-setXL = () => {
-    if (this.state.avg<4.5) this.setState({xl:"Yếu"});
-    else if (this.state.avg<6.5)this.setState({xl:"Trung Bình"});
-    else if (this.state.avg<8)this.setState({xl:"Khá"});
-    else if (this.state.avg<9)this.setState({xl:"Giỏi"});
-    else if (this.state.avg<10)this.setState({xl:"Xuất sắc"});
-}
-render() {
-    return (
-        <div className="container">
-            <h3 className="text-center">Kết quả học tập </h3>
-            <form onSubmit={this.handleSubmit} className='was-validated'>
-                <div className='from-group'>
-                    <label htmlFor='hk1'>Điểm HK1:</label>
-                    <input
-                        type='number'
-                        className='form-control'
-                        id='hk1'
-                        name='hk1'
-                        max={10}
-                        min={0}
-                        defaultValue={0}
-                        required
-                        onChange={this.handleChange}
-                    />
-                {/* <div className="invalid-feedback"> Điểm không hợp lệ</div> */}
-                </div>
-                <div className='from-group'>
-                    <label htmlFor='hk2'>Điểm HK2:</label>
-                    <input
-                        type='number'
-                        className='form-control'
-                        id='hk2'
-                        name='hk2'
-                        max={10}
-                        min={0}
-                        defaultValue={0}
-                        required
-                        onChange={this.handleChange}
-                    />
-                    {/* <div className="invalid-feedback"> Điểm không hợp lệ</div> */}
-                </div>
-                <div className='from-group'>
-                    <label htmlFor='hk2'>Điểm Trung Bình</label>
-                    <input
-                        type='number'
-                        className='form-control'
-                        readOnly
-                        value={this.state.avg}
-                        onChange={this.handleChange}
-                    />
-                
-                </div>
-                <div className='from-group'>
-                    <label htmlFor='hk2'>Kết quả:</label>
-                    <input
-                        type='text'
-                        className='form-control'
-                        defaultValue={0}
-                        readOnly
-                        value={this.state.result}
-                    />
-                </div>  
-                <div className='from-group'>
-                    <label htmlFor='hk2'>Xếp loại:</label>
-                    <input
-                        type='text'
-                        className='form-control'
-                        defaultValue={0}
-                        readOnly
-                        value={this.state.xl}
-                    />
-                </div>
-                <br></br>
-                <button type="submit" value="submit" className='btn btn-primary'>
-                    XEM KẾT QUẢ
-                </button>
-            </form>
+  const setResultAndXL = () => {
+    if (avg > 4.5) {
+      setResult("Được lên lớp");
+    } else {
+      setResult("Ở lại lp");
+    }
+
+    if (avg < 4.5) {
+      setXL("Yếu");
+    } else if (avg < 6.5) {
+      setXL("Trung Bình");
+    } else if (avg < 8) {
+      setXL("Khá");
+    } else if (avg < 9) {
+      setXL("Giỏi");
+    } else if (avg < 10) {
+      setXL("Xuất sắc");
+    }
+  };
+
+  setResultAndXL();
+
+  return (
+    <div className="container">
+      <h3 className="text-center">Kết quả học tập </h3>
+      <form onSubmit={handleSubmit} className="was-validated">
+        <div className="form-group">
+          <label htmlFor="hk1">Điểm HK1:</label>
+          <input
+            type="number"
+            className="form-control"
+            id="hk1"
+            name="hk1"
+            max={10}
+            min={0}
+            defaultValue={0}
+            required
+            onChange={handleChange}
+          />
         </div>
-
-    );
-}
-}
+        <div className="form-group">
+          <label htmlFor="hk2">Điểm HK2:</label>
+          <input
+            type="number"
+            className="form-control"
+            id="hk2"
+            name="hk2"
+            max={10}
+            min={0}
+            defaultValue={0}
+            required
+            onChange={handleChange}
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="avg">Điểm Trung Bình</label>
+          <input
+            type="number"
+            className="form-control"
+            readOnly
+            value={avg}
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="result">Kết quả:</label>
+          <input type="text" className="form-control" readOnly value={result} />
+        </div>
+        <div className="form-group">
+          <label htmlFor="xl">Xếp loại:</label>
+          <input type="text" className="form-control" readOnly value={xl} />
+        </div>
+        <br />
+        <button type="submit" value="submit" className="btn btn-primary">
+          XEM KẾT QUẢ
+        </button>
+      </form>
+    </div>
+  );
+};
 
 export default Score;
