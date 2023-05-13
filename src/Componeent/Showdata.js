@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-
 function Showdata(){
     const [product,setproduct]=useState([]);
 
