@@ -1,4 +1,5 @@
 import axios from "axios";
+import Color from "../component/Hoc/Color";
 import { useEffect, useState } from "react";
 function Showdata(){
     const [product,setproduct]=useState([]);
@@ -31,4 +32,4 @@ function Showdata(){
         </div>
     )
 }
-export default Showdata;
+export default Color(Showdata);
