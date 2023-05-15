@@ -2,6 +2,10 @@ import { useEffect, useState } from "react";
 
 function Delete() {
   const [user, setUser] = useState([]);
+  const [name, setName] = useState("");
+  const [price, setPrice] = useState("");
+  const [avatar, setAvatar] = useState("");
+  const [userid, setUserid] = useState(null);
 
   useEffect(() => {
     getUser();
@@ -12,6 +16,10 @@ function Delete() {
       .then((result) => {
         result.json().then((resp) => {
           setUser(resp);
+          setName(resp[0].name);
+          setPrice(resp[0].price);
+          setAvatar(resp[0].avatar);
+          setUserid(resp[0].id);
         });
       })
       .catch((error) => {
@@ -31,6 +39,36 @@ function Delete() {
       })
       .catch((error) => {
         console.error("Error deleting user:", error);
+      });
+  }
+
+  function selectUser(id) {
+    let item = user[id-2];
+    setName(item.name);
+    setPrice(item.price);
+    setAvatar(item.avatar);
+    setUserid(item.id);
+  }
+
+  function updateUser() {
+    let item = { name, price, avatar };
+    console.warn("item", item);
+    fetch(`https://645e542e8d08100293fcd90e.mockapi.io/sinhvien/${userid}`, {
+      method: "PUT",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(item),
+    })
+      .then((result) => {
+        result.json().then((resp) => {
+          console.warn(resp);
+          getUser();
+        });
+      })
+      .catch((error) => {
+        console.error("Error updating user:", error);
       });
   }
 
@@ -58,10 +96,19 @@ function Delete() {
               <td>
                 <button onClick={() => deleteUser(item.id)}>delete</button>
               </td>
+              <td>
+                <button onClick={() => selectUser(item.id)}>Update</button>
+              </td>
             </tr>
           ))}
         </tbody>
       </table>
+      <div>
+        <input type="text" value={name} onChange={(e)=>{setName(e.target.value)}}/><br></br>
+        <input type="text" value={price} onChange={(e)=>{setPrice(e.target.value)}}/><br></br>
+        <input type="text" value={avatar} onChange={(e)=>{setAvatar(e.target.value)}}/><br></br>
+        <button onClick={updateUser}>Update</button>
+      </div>
     </div>
   );
 }
