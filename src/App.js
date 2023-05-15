@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 import './App.css';
 
-
+import Delete from "./Containers/Delete";
 import Menu from './component/Menu/Tinhmenu';
 import Showmenu from './component/Menu/Showmenu';
 import Score from './component/Score/Score';
@@ -39,7 +39,7 @@ function App() {
           <Route exact path='/topic' element={<Topic></Topic>}/>
         
       </Routes> */}
-      <Nav/>
+      {/* <Nav/>
       <Routes>
           <Route exact path="/" element={ <Showdata />}>
            
@@ -49,8 +49,9 @@ function App() {
           </Route>
           <Route path="/topic" element={<Topic/>}>
             
-          </Route>
-        </Routes>
+          </Route> */}
+        {/* </Routes> */}
+        <Delete/>
     </div>
     </BrowserRouter>
   );
