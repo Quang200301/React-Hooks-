@@ -4,7 +4,7 @@ import { GetData } from "../component/Data/Data";
 function Search() {
   const [searchTerm, setSearchTerm] = useState("");
   const data = GetData(); // Invoke the GetData function to retrieve the data
-
+//  --------------- tìm kiếm sản phẩm theo tên-------------------------------------
   return (
     <>
       <div className="templateContainer">

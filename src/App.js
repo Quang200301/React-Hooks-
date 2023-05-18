@@ -20,6 +20,7 @@ import About from './component/Router/About';
 import Topic from './component/Router/Topic';
 import Nav from "./component/Nav/Nav";
 import Search from "./Componeent/Update";
+import Searchr from "./Componeent/Search";
 function App() {
   return (
     <BrowserRouter>
@@ -52,7 +53,7 @@ function App() {
             
           </Route> 
         </Routes>  */}
-        <Search/>
+        <Searchr/>
         
     </div>
     </BrowserRouter>
