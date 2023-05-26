@@ -1,57 +1,52 @@
 import axios from "axios";
-import React, { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
-function Searchr() {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [data, setData] = useState([]);
+function Searchr(){
+  const [search,setSearch]=useState("");
+  const [data,setData]=useState([]);
 
-  useEffect(() => {
-    fetchDataFromAPI();
-  }, []);
-
-  const fetchDataFromAPI = () => {
+  useEffect(()=>{
+    hi();
+  },[]);
+  const hi=()=>{
     axios
-    .get("https://645e542e8d08100293fcd90e.mockapi.io/sinhvien") 
-      .then((response) =>{
-        setData(response.data);
-      })
-      
-      .catch((error) => {
-        console.error("Error fetching data from API:", error);
-      });
+    .get("https://645e542e8d08100293fcd90e.mockapi.io/sinhvien")
+    .then((Response)=>{
+      setData(Response.data);
+    })
+    .catch((error)=>{
+      console.error("Error fetching from API",error);
+    });
+  }
+  const handleSearch=(event)=>{
+    setSearch(event.target.value);
   };
 
-  const handleSearch = (event) => {
-    setSearchTerm(event.target.value);
-  };
-
-  const filteredData = data.filter((item) =>
-    item.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-
-  return (
-    <>
-      <div className="templateContainer">
-        <div className="searchInput_Container">
-          <input
-            id="searchInput"
-            type="text"
-            placeholder="Search here..."
-            onChange={handleSearch}
-          />
-        </div>
-        <div className="template_Container">
-          {filteredData.map((item) => (
-            <div className="template" key={item.id}>
-              <img src={item.avatar} alt="" />
-              <h3>{item.name}</h3>
-              <p className="price">${item.price}</p>
-            </div>
-          ))}
-        </div>
+  const a = data.filter((item)=>
+      item.name.toLowerCase().includes(search.toLowerCase())
+  )
+  return(
+    <div>
+      <div>
+        <input 
+          id="searchinput"
+          type="text"
+          placeholder="Seaerch here"
+          onChange={handleSearch}
+        />
       </div>
-    </>
-  );
+      <div className="template_Container">
+        {a.map((item)=>(
+            <div key={item.id}>
+            <img src={item.avatar}/>
+            <h3>{item.name}</h3>
+            <p>{item.price}</p>
+  
+          </div>
+        ))}
+        
+      </div>
+    </div>
+  )
 }
-
 export default Searchr;

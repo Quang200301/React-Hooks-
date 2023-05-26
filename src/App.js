@@ -4,6 +4,7 @@ import {
   Routes,
   Route,
   Link,
+  Redirect
  
 } from "react-router-dom";
 import './App.css';
@@ -21,10 +22,16 @@ import Topic from './component/Router/Topic';
 import Nav from "./component/Nav/Nav";
 import Search from "./Componeent/Update";
 import Searchr from "./Componeent/Search";
-function App() {
-  return (
-    <BrowserRouter>
-    <div className="App">
+import Danhsachcompany from "./ProjectGroup/Danhsachcompany";
+
+// import Home from "./ComponentNew/Home";
+
+
+
+// function App() {
+//   return (
+    // <BrowserRouter>
+    // <div className="App">
       {/* <h1>Well come to Router</h1>
       <div>
             <Link to={'/'}>Home</Link>
@@ -53,13 +60,13 @@ function App() {
             
           </Route> 
         </Routes>  */}
-        <Searchr/>
+        {/* <Searchr/> */}
         
-    </div>
-    </BrowserRouter>
-  );
-}
-// showContentMenus = (routes) => {
+    // </div>
+    // </BrowserRouter>
+
+
+  
 //   var result = null;
 //   if (routes.length > 0) {
 //     result = routes.map((route, index) => {
@@ -76,5 +83,37 @@ function App() {
 // }
 
 
-
+function App() {
+  return (
+    <BrowserRouter>
+    <div className="App">
+      {/* <BrowserRouter>
+        <ToastContainer />
+        <NavBar />
+        <div className="content-container">
+          <Routes>
+            <Route path="/cart" component={Cart} />
+            <Route path="/not-found" component={NotFound} />
+            <Route path="/" exact component={Home} />
+            <Redirect to="/not-found" />
+          </Routes>
+        </div>
+      </BrowserRouter> */}
+       <Nav/> 
+      {/* <Routes>
+          <Route exact path="/" element={ <Showdata />}>
+           
+          </Route>
+        <Route path="/about" element={ <Add />}>
+           
+          </Route>
+          <Route path="/topic" element={<Delete/>}>
+            
+          </Route> 
+        </Routes>   */}
+        <Danhsachcompany/>
+    </div>
+    </BrowserRouter>
+  );
+}
 export default App;
