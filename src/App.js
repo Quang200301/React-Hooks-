@@ -23,7 +23,9 @@ import Nav from "./component/Nav/Nav";
 import Search from "./Componeent/Update";
 import Searchr from "./Componeent/Search";
 import Danhsachcompany from "./ProjectGroup/Danhsachcompany";
+import Project from "./Projejct/Nav";
 
+import Addd from "./component/Add";
 // import Home from "./ComponentNew/Home";
 
 
@@ -67,20 +69,10 @@ import Danhsachcompany from "./ProjectGroup/Danhsachcompany";
 
 
   
-//   var result = null;
-//   if (routes.length > 0) {
-//     result = routes.map((route, index) => {
-//       return (<Route
-//         key={index}
-//         path={route.path}
-//         exact={route.exact}
-//         component={route.main}
-//       />
-//       )
-//     });
-//   }
-//   return <Switch>{result}</Switch>;
-// }
+
+
+
+
 
 
 function App() {
@@ -99,8 +91,8 @@ function App() {
           </Routes>
         </div>
       </BrowserRouter> */}
-       <Nav/> 
-      {/* <Routes>
+       {/* <Project/> 
+      <Routes>
           <Route exact path="/" element={ <Showdata />}>
            
           </Route>
@@ -111,8 +103,9 @@ function App() {
             
           </Route> 
         </Routes>   */}
-        <Danhsachcompany/>
-    </div>
+        {/* <Danhsachcompany/> */}
+        
+     </div>
     </BrowserRouter>
   );
 }

@@ -83,6 +83,8 @@ img.icon{
   background-color: #04AA6D;
   color: white;
 }
+
+
 /* ----------------------------------------------------------- */
 .hi {
   text-align: center;
@@ -164,5 +166,5 @@ button:hover {
 }
 div.template_Container{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr ;
 }
