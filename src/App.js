@@ -24,10 +24,10 @@ import Search from "./Componeent/Update";
 import Searchr from "./Componeent/Search";
 import Danhsachcompany from "./ProjectGroup/Danhsachcompany";
 import Project from "./Projejct/Nav";
-
+import Test from "./Containers/Test";
 import Addd from "./component/Add";
 // import Home from "./ComponentNew/Home";
-
+import Testadd from "./Containers/Testadd";
 
 
 // function App() {
@@ -104,7 +104,7 @@ function App() {
           </Route> 
         </Routes>   */}
         {/* <Danhsachcompany/> */}
-        
+        <Testadd/>
      </div>
     </BrowserRouter>
   );
