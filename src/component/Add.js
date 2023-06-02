@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { BrowserRouter as NavLink } from 'react-router-dom';
+import {NavLink } from 'react-router-dom';
 
-class Add extends Component {
+class Adddd extends Component {
     constructor(props){
         super(props);
         this.state={
@@ -214,4 +214,4 @@ class Add extends Component {
           }																			
 }
 
-export default Add;
+export default Adddd;

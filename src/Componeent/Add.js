@@ -35,7 +35,7 @@ import { useState } from "react"
     return(
         <div className="container mt-3">
        
-        <form onSubmit={(e)=>submit(e)}>
+        <form onSubmit={(e)=>submit(e)} >
           <div className="mb-3 mt-3">
             <label >Name</label>
             <input  onChange={(e)=>handle(e)} id="name"value={data.name} placeholder="name" name="name"/>

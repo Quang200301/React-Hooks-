@@ -39,6 +39,10 @@ div.ipro{
   width: 100%;
  
 }
+.topnav{
+  display: flex;
+  justify-content: space-between;
+}
 
 .hea{
   display: grid;

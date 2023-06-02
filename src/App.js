@@ -7,8 +7,9 @@ import {
   Redirect
  
 } from "react-router-dom";
+import '../src/component/Home.css';
 import './App.css';
-
+import Adddd from "./component/Add";
 import Delete from "./Containers/Delete";
 import Menu from './component/Menu/Tinhmenu';
 import Showmenu from './component/Menu/Showmenu';
@@ -26,85 +27,36 @@ import Danhsachcompany from "./ProjectGroup/Danhsachcompany";
 import Project from "./Projejct/Nav";
 import Test from "./Containers/Test";
 import Addd from "./component/Add";
-// import Home from "./ComponentNew/Home";
+import Xoaad from "./component/xoa";
 import Testadd from "./Containers/Testadd";
-
-
-// function App() {
-//   return (
-    // <BrowserRouter>
-    // <div className="App">
-      {/* <h1>Well come to Router</h1>
-      <div>
-            <Link to={'/'}>Home</Link>
-            <br></br>
-            <Link to={'about'}>About</Link>
-            <br></br>
-            <Link to={'topic'}>Topic</Link>
-        </div> */}
-      {/* <Routes>
-       
-          <Route exact path='/' element={<Home></Home>}/>
-          <Route exact path='/about' element={<About></About>}/>
-          <Route exact path='/topic' element={<Topic></Topic>}/>
-        
-      </Routes> */}
-{/*       
-        <Nav/> 
-      <Routes>
-          <Route exact path="/" element={ <Showdata />}>
-           
-          </Route>
-        <Route path="/about" element={ <Add />}>
-           
-          </Route>
-          <Route path="/topic" element={<Delete/>}>
-            
-          </Route> 
-        </Routes>  */}
-        {/* <Searchr/> */}
-        
-    // </div>
-    // </BrowserRouter>
-
-
-  
-
-
-
-
-
-
+import Homeproject from "./component/Home";
+import Quanque from "./Containers/Quanque";
+import Xinchao from "./component/Xinchao";
 function App() {
   return (
     <BrowserRouter>
     <div className="App">
-      {/* <BrowserRouter>
-        <ToastContainer />
-        <NavBar />
-        <div className="content-container">
-          <Routes>
-            <Route path="/cart" component={Cart} />
-            <Route path="/not-found" component={NotFound} />
-            <Route path="/" exact component={Home} />
-            <Redirect to="/not-found" />
-          </Routes>
-        </div>
-      </BrowserRouter> */}
-       {/* <Project/> 
+     
+      <Nav />
+
       <Routes>
-          <Route exact path="/" element={ <Showdata />}>
+          <Route exact path="/" element={ <Homeproject/> }>
            
           </Route>
-        <Route path="/about" element={ <Add />}>
+         <Route path="/about" element={ <Xinchao />}>
            
-          </Route>
-          <Route path="/topic" element={<Delete/>}>
+          </Route> 
+          <Route path="/topic" element={<Xoaad/>}>
             
           </Route> 
-        </Routes>   */}
-        {/* <Danhsachcompany/> */}
-        <Testadd/>
+
+         
+          <Route path="/adddd" element={<Adddd/>}>
+            
+          </Route> 
+        </Routes>   
+       
+       
      </div>
     </BrowserRouter>
   );

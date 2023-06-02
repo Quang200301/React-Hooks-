@@ -350,6 +350,19 @@
       "description": "goood",
       "tinhtranghang": true,
       "id": "107jjEZ"
+    },
+    {
+      "name": "Dang Xuan Vinh",
+      "price": "20",
+      "image": "/images/z4344947219088_831e0d195ce29725a60da9b4e275608a.jpg",
+      "color": "xanh",
+      "name_category": "sản phẩm hot",
+      "material": "vàng",
+      "expiry_date": "2023-06-07",
+      "origin": "trung quốc",
+      "description": "goood",
+      "tinhtranghang": false,
+      "id": "33pCNGM"
     }
   ],
   "categories": [
