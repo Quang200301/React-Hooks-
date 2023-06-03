@@ -28,12 +28,13 @@ function Searchr(){
   return(
     <div>
       <div>
-        <input 
-          id="searchinput"
-          type="text"
-          placeholder="Seaerch here"
-          onChange={handleSearch}
-        />
+          <input 
+            id="searchinput"
+            type="text"
+            className="form-control"
+            placeholder="Search here"
+            onChange={handleSearch}
+          />
       </div>
       <div className="template_Container">
         {a.map((item)=>(

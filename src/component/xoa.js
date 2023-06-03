@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-
+import { NavLink } from "react-router-dom";
+import Swal from "sweetalert2";
 function Xoaad() {
   const [userr, setUserr] = useState([]);
   const [name, setName] = useState("");
@@ -35,6 +36,7 @@ function Xoaad() {
     })
       .then((result) => {
         result.json().then((resp) => {
+          Swal.fire("Thành công", "xóa sản phẩm thành công", "success");
           console.warn(resp);
           getUserr();
         });
@@ -45,7 +47,7 @@ function Xoaad() {
   }
 
   function selectUser(id) {
-    let item = userr[id-3];
+    let item = userr[id -3];
     setName(item.name);
     setPrice(item.price);
     setImage(item.image);
@@ -66,6 +68,7 @@ function Xoaad() {
     })
       .then((result) => {
         result.json().then((resp) => {
+          Swal.fire("Thành công", "Cập nhật sản phẩm thành công", "success");
           console.warn(resp);
           getUserr();
         });
@@ -77,7 +80,7 @@ function Xoaad() {
 
   return (
     <div className="hi">
-      <h1>DeleteUser with API</h1>
+      <h1>Trang AdMin</h1>
       <div>
       <table border="1 solid black">
         <thead>
@@ -96,10 +99,10 @@ function Xoaad() {
               <td>{item.name}</td>
               <td>{item.price}</td>
               <td>
-                <img src={item.image} alt={item.name} />
+                <img src={item.image} alt='' />
               </td>
               <td>
-                <img src={item.origin}  />
+                {item.origin}  
               </td>
               <td>
                 <button onClick={() => deleteUser(item.id)}>Delete</button>
@@ -108,20 +111,21 @@ function Xoaad() {
                 <button onClick={() => selectUser(item.id)}>Edit</button>
               </td>
               <td>
-                 <a href="../Component/add">Add</a>
+              <h3><NavLink activeclassName="active" to={'/Adddd'} className="btn btn-primary">Add</NavLink></h3>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
       </div>
-      {/* <div>
-        <input type="text" value={name} onChange={(e)=>{setName(e.target.value)}}/><br></br>
-        <input type="text" value={price} onChange={(e)=>{setPrice(e.target.value)}}/><br></br>
-        <input type="text" value={image} onChange={(e)=>{setImage(e.target.value)}}/><br></br>
-        <input type="text" value={origin} onChange={(e)=>{setOrigin(e.target.value)}}/><br></br>
-        <button onClick={updateUser}>Update</button>
-      </div> */}
+      <br></br>
+      <div>
+        <input type="text" value={name} onChange={(e) => { setName(e.target.value) }} className="form-control" /><br />
+        <input type="text" value={price} onChange={(e) => { setPrice(e.target.value) }} className="form-control" /><br />
+        <input type="text" value={image} onChange={(e) => { setImage(e.target.value) }} className="form-control" /><br />
+        <input type="text" value={origin} onChange={(e) => { setOrigin(e.target.value) }} className="form-control" /><br />
+        <button onClick={updateUser} className="btn btn-primary">Update</button>
+      </div>
     </div>
   );
 }

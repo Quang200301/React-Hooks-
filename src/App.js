@@ -32,31 +32,34 @@ import Testadd from "./Containers/Testadd";
 import Homeproject from "./component/Home";
 import Quanque from "./Containers/Quanque";
 import Xinchao from "./component/Xinchao";
+import ShowProduct from "./Componeent/ShowdataAPI";
 function App() {
   return (
     <BrowserRouter>
     <div className="App">
      
-      <Nav />
+       {/* <Nav />  */}
 
-      <Routes>
-          <Route exact path="/" element={ <Homeproject/> }>
+       <Routes>
+          {/* <Route exact path="/" element={ <Homeproject/> }>
            
           </Route>
+
          <Route path="/about" element={ <Xinchao />}>
            
           </Route> 
+          
           <Route path="/topic" element={<Xoaad/>}>
             
-          </Route> 
+          </Route>  */}
 
          
           <Route path="/adddd" element={<Adddd/>}>
             
           </Route> 
-        </Routes>   
+        </Routes>    
        
-       
+       <ShowProduct/>
      </div>
     </BrowserRouter>
   );
