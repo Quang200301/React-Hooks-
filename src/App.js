@@ -38,10 +38,10 @@ function App() {
     <BrowserRouter>
     <div className="App">
      
-       {/* <Nav />  */}
+       <Nav /> 
 
        <Routes>
-          {/* <Route exact path="/" element={ <Homeproject/> }>
+          <Route exact path="/" element={ <Homeproject/> }>
            
           </Route>
 
@@ -51,15 +51,15 @@ function App() {
           
           <Route path="/topic" element={<Xoaad/>}>
             
-          </Route>  */}
+          </Route> 
 
          
           <Route path="/adddd" element={<Adddd/>}>
             
           </Route> 
         </Routes>    
-       
-       <ShowProduct/>
+{/*        
+       <ShowProduct/> */}
      </div>
     </BrowserRouter>
   );
