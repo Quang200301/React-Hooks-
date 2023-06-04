@@ -1,24 +1,20 @@
 {
   "products": [
     {
-      "name": "chi",
-      "price": "15",
-      "image": "/images/1434429117-banh-su-kem-chien-20.jpg",
+      "id": "3",
+      "name": "chi test thử  nhaokook",
+      "price": "",
+      "image": "C:\\fakepath\\co-nhan-tao-san-bong-da-nang.jpg",
       "origin": "Đà Nẵng",
-      "id": "3"
+      "tinhtranghang": true
     },
     {
+      "id": "4",
       "name": "Bánh Tiramisu Italia",
-      "price": "36",
-      "image": "/images/banhbonglantrungmuoi.jpg",
-      "color": "Hồng bánh kem",
-      "name_category": "sản phẩm mới",
-      "material": "Bánh và trứng",
-      "expiry_date": "3 ngày",
+      "price": "25",
+      "image": "C:\\fakepath\\z4344947210357_0340306415b9f9d09e7d4a73f16b7bc2.jpg",
       "origin": "Italia",
-      "description": "Dành cho những người đói bụng",
-      "tinhtranghang": true,
-      "id": "4"
+      "tinhtranghang": true
     },
     {
       "name": "ngon",
@@ -182,6 +178,19 @@
       "description": "",
       "tinhtranghang": true,
       "id": "9c3tg6B"
+    },
+    {
+      "name": "qan",
+      "price": "30",
+      "image": "/images/z4344947200201_f0d7273a8ec67ccbdb710c1705acf2db.jpg",
+      "color": "xanh",
+      "name_category": "sản phẩm khuyến mãi",
+      "material": "vàng",
+      "expiry_date": "2023-06-16",
+      "origin": "trung quốc",
+      "description": "goood",
+      "tinhtranghang": false,
+      "id": "D31NHWR"
     }
   ],
   "categories": [

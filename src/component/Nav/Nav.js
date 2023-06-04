@@ -4,6 +4,7 @@ import {
     Link,
    
   } from "react-router-dom";
+import NavDropdown from 'react-bootstrap/NavDropdown';
 class Nav extends React.Component{
     render(){
         return(
@@ -14,10 +15,10 @@ class Nav extends React.Component{
                 <NavLink activeclassName="active" to={'/topic'}>AdMin</NavLink>
                 </div>
                 <div>
-                <NavLink activeclassName="active" to={'/contact'}>Cart</NavLink>
+               
                 <NavLink activeclassName="active" to={'/sigin'}>Sigin</NavLink>
-                <NavLink activeclassName="active" to={'/logout'}>Logout</NavLink>
                 </div>
+                
                 {/* <Link className="active" to={'/'}>Home</Link>
                 <Link to={'about'}>About</Link>
                 <Link to={'topic'}>Topic</Link> */}

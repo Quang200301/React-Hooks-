@@ -1,6 +1,14 @@
  .row{
 
    margin-top: 30px;
-   row-gap: 20px;
-    
+   row-gap: 30px;
+   margin-left: 40px;
+  
 } 
+div.col-md-4{
+  gap:30px;
+}
+.form-control{
+  width: 40%;
+  margin-left: 40px;
+}

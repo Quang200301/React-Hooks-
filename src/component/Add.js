@@ -195,8 +195,8 @@ render(){
                                             <br />
                                             <div className="text-center">
                                                 <button type="submit" className="btn btn-primary">Lưu</button>&nbsp;
-                                                <button type="button" onClick={this.onClear} className="btn btn-primary">Clear</button>
-                                                <NavLink to="/product-list" className="btn btn-primary ml-1">Trở về</NavLink>
+                                                {/* <button type="button" onClick={this.onClear} className="btn btn-primary">Clear</button> */}
+                                                {/* <NavLink to="/product-list" className="btn btn-primary ml-1">Trở về</NavLink> */}
                                             </div>
                                         </form>
                                     </div>

@@ -8,6 +8,7 @@ import {
  
 } from "react-router-dom";
 import '../src/component/Home.css';
+
 import './App.css';
 import Adddd from "./component/Add";
 import Delete from "./Containers/Delete";
@@ -33,6 +34,7 @@ import Homeproject from "./component/Home";
 import Quanque from "./Containers/Quanque";
 import Xinchao from "./component/Xinchao";
 import ShowProduct from "./Componeent/ShowdataAPI";
+import Edit from "./component/Edit";
 function App() {
   return (
     <BrowserRouter>
@@ -57,6 +59,9 @@ function App() {
           <Route path="/adddd" element={<Adddd/>}>
             
           </Route> 
+          <Route path="/edit/:id" element={<Edit/>}>
+            
+            </Route> 
         </Routes>    
 {/*        
        <ShowProduct/> */}

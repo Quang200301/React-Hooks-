@@ -46,37 +46,37 @@ function Xoaad() {
       });
   }
 
-  function selectUser(id) {
-    let item = userr[id -3];
-    setName(item.name);
-    setPrice(item.price);
-    setImage(item.image);
-    setOrigin(item.origin);
-    setUserid(item.id);
-  }
+  // function selectUser(id) {
+  //   let item = userr[id-3];
+  //   setName(item.name);
+  //   setPrice(item.price);
+  //   setImage(item.image);
+  //   setOrigin(item.origin);
+  //   setUserid(item.id);
+  // }
 
-  function updateUser() {
-    let item = { name, price, image,origin };
-    console.warn("item", item);
-    fetch(`http://localhost:3000/products/${userid}`, {
-      method: "PUT",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(item),
-    })
-      .then((result) => {
-        result.json().then((resp) => {
-          Swal.fire("Thành công", "Cập nhật sản phẩm thành công", "success");
-          console.warn(resp);
-          getUserr();
-        });
-      })
-      .catch((error) => {
-        console.error("Error updating user:", error);
-      });
-  }
+  // function updateUser() {
+  //   let item = { name, price, image,origin };
+  //   console.warn("item", item);
+  //   fetch(`http://localhost:3000/products/${userid}`, {
+  //     method: "PUT",
+  //     headers: {
+  //       Accept: "application/json",
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify(item),
+  //   })
+  //     .then((result) => {
+  //       result.json().then((resp) => {
+  //         Swal.fire("Thành công", "Cập nhật sản phẩm thành công", "success");
+  //         console.warn(resp);
+  //         getUserr();
+  //       });
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error updating user:", error);
+  //     });
+  // }
 
   return (
     <div className="hi">
@@ -108,7 +108,8 @@ function Xoaad() {
                 <button onClick={() => deleteUser(item.id)}>Delete</button>
               </td>
               <td>
-                <button onClick={() => selectUser(item.id)}>Edit</button>
+                {/* <button onClick={() => selectUser(item.id)}>Edit</button> */}
+                <h3><NavLink activeclassName="active" to={`/edit/${item.id}`}  className="btn btn-primary">Edit</NavLink></h3>
               </td>
               <td>
               <h3><NavLink activeclassName="active" to={'/Adddd'} className="btn btn-primary">Add</NavLink></h3>
@@ -119,13 +120,13 @@ function Xoaad() {
       </table>
       </div>
       <br></br>
-      <div>
+      {/* <div>
         <input type="text" value={name} onChange={(e) => { setName(e.target.value) }} className="form-control" /><br />
         <input type="text" value={price} onChange={(e) => { setPrice(e.target.value) }} className="form-control" /><br />
         <input type="text" value={image} onChange={(e) => { setImage(e.target.value) }} className="form-control" /><br />
         <input type="text" value={origin} onChange={(e) => { setOrigin(e.target.value) }} className="form-control" /><br />
         <button onClick={updateUser} className="btn btn-primary">Update</button>
-      </div>
+      </div> */}
     </div>
   );
 }
