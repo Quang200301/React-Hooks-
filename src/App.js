@@ -8,7 +8,7 @@ import {
  
 } from "react-router-dom";
 import '../src/component/Home.css';
-
+import'../src/Login/Login.css';
 import './App.css';
 import Adddd from "./component/Add";
 import Delete from "./Containers/Delete";
@@ -35,36 +35,44 @@ import Quanque from "./Containers/Quanque";
 import Xinchao from "./component/Xinchao";
 import ShowProduct from "./Componeent/ShowdataAPI";
 import Edit from "./component/Edit";
+import Loginone from "./Login/Login";
+import Lazada from "./Componeent/lazada";
+
+import Addlazada from "./Componeent/Addlazada";
 function App() {
   return (
+    // <Loginone/>
     <BrowserRouter>
     <div className="App">
      
-       <Nav /> 
+       {/* <Nav />  */}
 
-       <Routes>
-          <Route exact path="/" element={ <Homeproject/> }>
+        {/* <Routes> */}
+          {/* <Route exact path="/" element={ <Homeproject/> }> */}
            
-          </Route>
+          {/* </Route> */}
 
-         <Route path="/about" element={ <Xinchao />}>
+          {/* <Route path="/about" element={ <Xinchao />}> */}
            
-          </Route> 
+           {/* </Route>  */}
           
-          <Route path="/topic" element={<Xoaad/>}>
+          {/* <Route path="/topic" element={<Xoaad/>}>
             
-          </Route> 
+           </Route> 
 
          
           <Route path="/adddd" element={<Adddd/>}>
             
           </Route> 
-          <Route path="/edit/:id" element={<Edit/>}>
+          <Route path="/edit/:id" element={<Edit/>}> */}
+          {/* <Route exact path="/laza" element={<Addlazada/>}>
             
             </Route> 
         </Routes>    
-{/*        
-       <ShowProduct/> */}
+        */}
+        {/* <Addlazada/>
+     <Lazada/> */}
+     <Loginone/>
      </div>
     </BrowserRouter>
   );
