@@ -22,10 +22,10 @@ function Lazada(){
     }
     return(
         <div className="container">
-            {/* <NavLink active className="active" to={'/laza'}>Add</NavLink> */}
-            <div className="row">
+            <NavLink active className="active" to={'/add'}>Add</NavLink>
+            <div className="row d-flex justify-content-center">
                 {spham.map((item)=>(
-                    <div key={item.id}>
+                    <div key={item.id} className="col-md-3 my-5 mx-5">
                     <div className="card" style={{width: '18rem'}}>
                     <img src={item.avarta} className="card-img-top" alt="..." />
                     <div className="card-body">

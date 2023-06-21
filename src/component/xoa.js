@@ -46,37 +46,7 @@ function Xoaad() {
       });
   }
 
-  // function selectUser(id) {
-  //   let item = userr[id-3];
-  //   setName(item.name);
-  //   setPrice(item.price);
-  //   setImage(item.image);
-  //   setOrigin(item.origin);
-  //   setUserid(item.id);
-  // }
-
-  // function updateUser() {
-  //   let item = { name, price, image,origin };
-  //   console.warn("item", item);
-  //   fetch(`http://localhost:3000/products/${userid}`, {
-  //     method: "PUT",
-  //     headers: {
-  //       Accept: "application/json",
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify(item),
-  //   })
-  //     .then((result) => {
-  //       result.json().then((resp) => {
-  //         Swal.fire("Thành công", "Cập nhật sản phẩm thành công", "success");
-  //         console.warn(resp);
-  //         getUserr();
-  //       });
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error updating user:", error);
-  //     });
-  // }
+ 
 
   return (
     <div className="hi">
