@@ -76,9 +76,9 @@ function App() {
               <Route path="/cart/:id" element={<Cart/>} />
               <Route path="/edit/:id" element={<Edit/>} />
         </Routes> */}
-        {/* <Detail/> */}
+        <Detail/>
         {/* <Loginone/> */}
-        <PDF/>
+        {/* <PDF/> */}
       </div>
     </>
   );

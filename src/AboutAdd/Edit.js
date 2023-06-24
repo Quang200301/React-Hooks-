@@ -3,12 +3,12 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 function Edit() {
-    const navigate = useNavigate();
-  const { id } = useParams();
-  const [avatar, setAvatar] = useState("");
-  const [name, setName] = useState("");
+      const navigate = useNavigate();
+      const { id } = useParams();
+      const [avatar, setAvatar] = useState("");
+      const [name, setName] = useState("");
 
-  const url = `https://645e542e8d08100293fcd90e.mockapi.io/sinhvien/${id}`;
+      const url = `https://645e542e8d08100293fcd90e.mockapi.io/sinhvien/${id}`;
 
   useEffect(() => {
     async function fetchData() {
